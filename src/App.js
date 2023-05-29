@@ -3,10 +3,13 @@ import { MdOutlineDangerous } from "react-icons/md";
 import Button from "./Button";
 
 function App() {
+  const handlerEvent = () => {
+    console.log("Clicked!");
+  };
   return (
     <div className="container mx-auto">
       <div>
-        <Button outline primary>
+        <Button onClick={handlerEvent} outline primary>
           Click Me!
         </Button>
       </div>
