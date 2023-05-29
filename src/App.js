@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="container mx-auto">
       <div>
-        <Button onClick={handlerEvent} outline primary>
+        <Button className="mb-5 mt-2" onClick={handlerEvent} outline primary>
           Click Me!
         </Button>
       </div>
