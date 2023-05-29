@@ -1,15 +1,17 @@
+import { GoBell } from "react-icons/go";
+import { MdOutlineDangerous } from "react-icons/md";
 import Button from "./Button";
 
 function App() {
   return (
-    <div>
+    <div className="container mx-auto">
       <div>
-        <Button primary outline rounded>
+        <Button outline primary>
           Click Me!
         </Button>
       </div>
       <div>
-        <Button secondary outline>
+        <Button secondary outline rounded>
           Buy Now
         </Button>
       </div>
@@ -19,12 +21,16 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button warning rounded>
+        <Button warning>
+          <GoBell />
           Hide Ads!
         </Button>
       </div>
       <div>
-        <Button danger>Submit</Button>
+        <Button danger outline>
+          <MdOutlineDangerous />
+          Submit
+        </Button>
       </div>
     </div>
   );
