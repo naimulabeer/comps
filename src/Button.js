@@ -12,10 +12,17 @@ function Button({
 }) {
   const classes = className("px-3 py-1.5 border", {
     "border-blue-500 bg-blue-500 text-white": primary,
-    "border-black bg-black text-white": secondary,
+    "border-gray-900 bg-gray-900 text-white": secondary,
     "border-emerald-800 bg-emerald-500 text-white": success,
     "border-yellow-800 bg-yellow-400 text-white": warning,
     "border-red-800 bg-red-500 text-white": danger,
+    "rounded-full": rounded,
+    "bg-white": outline,
+    "text-blue-500": outline && primary,
+    "text-gray-500": outline && secondary,
+    "text-emerald-500": outline && success,
+    "text-yellow-500": outline && warning,
+    "text-red-500": outline && danger,
   });
 
   return <button className={classes}>{children}</button>;

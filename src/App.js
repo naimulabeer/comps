@@ -9,7 +9,9 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button secondary>Buy Now</Button>
+        <Button secondary outline>
+          Buy Now
+        </Button>
       </div>
       <div>
         <Button success outline>
