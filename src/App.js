@@ -1,42 +1,22 @@
-import { GoBell } from "react-icons/go";
-import { MdOutlineDangerous } from "react-icons/md";
-import Button from "./components/Button";
+import Accordion from "./components/Accordion";
 
 function App() {
-  const handlerEvent = () => {
-    console.log("Clicked!");
-  };
-  return (
-    <div>
-      <div>
-        <Button className="mb-5 mt-2" onClick={handlerEvent} outline primary>
-          Click Me!
-        </Button>
-      </div>
-      <div>
-        <Button secondary outline rounded>
-          Buy Now
-        </Button>
-      </div>
-      <div>
-        <Button success outline>
-          See Deal
-        </Button>
-      </div>
-      <div>
-        <Button warning>
-          <GoBell />
-          Hide Ads!
-        </Button>
-      </div>
-      <div>
-        <Button danger outline>
-          <MdOutlineDangerous />
-          Submit
-        </Button>
-      </div>
-    </div>
-  );
+  const items = [
+    {
+      label: "Can I use React on a project",
+      content: "You can use React on any project you want",
+    },
+    {
+      label: "Can I use JavaScript on a project",
+      content: "You can use JavaScript on any project you want",
+    },
+    {
+      label: "Can I use HTML or CSS on a project",
+      content: "You can use HTML or CSS on any project you want",
+    },
+  ];
+
+  return <Accordion items={items} />;
 }
 
 export default App;
