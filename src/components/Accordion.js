@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FcExpand, FcCollapse } from "react-icons/fc";
 
 function Accordion({ items }) {
   const [expandedItems, setExpandedItems] = useState(0);
@@ -10,7 +11,7 @@ function Accordion({ items }) {
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedItems;
 
-    const icon = <span>{isExpanded ? "DOWN" : "LEFT"}</span>;
+    const icon = <span>{isExpanded ? <FcExpand /> : <FcCollapse />}</span>;
 
     return (
       <div key={item.id}>
