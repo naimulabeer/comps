@@ -2,14 +2,18 @@ import { useState } from "react";
 import { FcExpand, FcCollapse } from "react-icons/fc";
 
 function Accordion({ items }) {
-  const [expandedItems, setExpandedItems] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (nextIndex) => {
-    setExpandedItems(nextIndex);
+    if (expandedIndex === nextIndex) {
+      setExpandedIndex(-1);
+    } else {
+      setExpandedIndex(nextIndex);
+    }
   };
 
   const renderedItems = items.map((item, index) => {
-    const isExpanded = index === expandedItems;
+    const isExpanded = index === expandedIndex;
 
     const icon = (
       <span className="text-xl">
