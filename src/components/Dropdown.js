@@ -10,6 +10,10 @@ function Dropdown({ options, value, onChange }) {
       console.log(event.target);
     };
     document.addEventListener("click", handler, true);
+
+    return () => {
+      document.removeEventListener("click", handler);
+    };
   }, []);
 
   const handleClick = () => {
