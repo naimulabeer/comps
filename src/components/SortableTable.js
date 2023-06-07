@@ -1,5 +1,6 @@
-import Table from "./Table";
 import { useState } from "react";
+import { FaSortUp, FaSort, FaSortDown } from "react-icons/fa";
+import Table from "./Table";
 
 function SortableTable(props) {
   const [sortOrder, setSortOrder] = useState(null);
@@ -26,9 +27,14 @@ function SortableTable(props) {
     return {
       ...column,
       header: () => (
-        <th onClick={() => handleClick(column.label)}>
-          {getIcons(column.label, sortBy, sortOrder)}
-          {column.label}
+        <th
+          className="cursor-pointer hover:bg-gray-100"
+          onClick={() => handleClick(column.label)}
+        >
+          <div className="flex items-center">
+            {getIcons(column.label, sortBy, sortOrder)}
+            {column.label}
+          </div>
         </th>
       ),
     };
@@ -61,14 +67,30 @@ function SortableTable(props) {
 
 function getIcons(label, sortBy, sortOrder) {
   if (label !== sortBy) {
-    return "show both icons";
+    return (
+      <div>
+        <FaSort />
+      </div>
+    );
   }
   if (sortOrder === null) {
-    return "show both icons";
+    return (
+      <div>
+        <FaSort />
+      </div>
+    );
   } else if (sortOrder === "asc") {
-    return "show up icon";
+    return (
+      <div>
+        <FaSortUp />
+      </div>
+    );
   } else if (sortOrder === "desc") {
-    return "show down icon";
+    return (
+      <div>
+        <FaSortDown />
+      </div>
+    );
   }
 }
 
