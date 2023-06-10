@@ -20,3 +20,6 @@ npm start
 
 #Table: 
 ![table](https://github.com/abeer117/comps/assets/102556073/3ca9afe1-7989-4ccf-8811-72337a44e488)
+
+#Counter:
+![counter](https://github.com/abeer117/comps/assets/102556073/fe70dac8-0e60-4291-ae39-903af54f63de)
