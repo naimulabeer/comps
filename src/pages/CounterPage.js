@@ -3,7 +3,12 @@ import Button from "../components/Button";
 import Panel from "../components/Panel";
 
 function CounterPage({ initialCount }) {
-  const reducer = (state, action) => {};
+  const reducer = (state, action) => {
+    return {
+      ...state,
+      count: state.count + 1,
+    };
+  };
   // const [count, setCount] = useState(initialCount);
 
   // const [valueToAdd, setValueToAdd] = useState(0);
@@ -14,7 +19,7 @@ function CounterPage({ initialCount }) {
   });
 
   const increment = () => {
-    // setCount(count + 1);
+    dispatch();
   };
 
   const decrement = () => {
