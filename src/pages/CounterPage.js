@@ -4,10 +4,18 @@ import Panel from "../components/Panel";
 
 function CounterPage({ initialCount }) {
   const reducer = (state, action) => {
-    return {
-      ...state,
-      count: state.count + 1,
-    };
+    if (action.type === "increment") {
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+    }
+    if (action.type === "change-value-add") {
+      return {
+        ...state,
+        valueToAdd: action.payload,
+      };
+    }
   };
   // const [count, setCount] = useState(initialCount);
 
@@ -19,7 +27,9 @@ function CounterPage({ initialCount }) {
   });
 
   const increment = () => {
-    dispatch();
+    dispatch({
+      type: "increment",
+    });
   };
 
   const decrement = () => {
@@ -29,7 +39,10 @@ function CounterPage({ initialCount }) {
   const handleChange = (event) => {
     const value = parseInt(event.target.value) || 0;
 
-    // setValueToAdd(value);
+    dispatch({
+      type: "change-value-add",
+      payload: value,
+    });
   };
 
   const handleSubmit = (event) => {
