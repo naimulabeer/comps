@@ -5,21 +5,26 @@ import Panel from "../components/Panel";
 const INCREMENT_COUNT = "increment";
 const SET_VALUE_TO_ADD = "change-value-to-add";
 
-function CounterPage({ initialCount }) {
-  const reducer = (state, action) => {
-    if (action.type === INCREMENT_COUNT) {
+const reducer = (state, action) => {
+  switch (action.type) {
+    case INCREMENT_COUNT:
       return {
         ...state,
         count: state.count + 1,
       };
-    }
-    if (action.type === SET_VALUE_TO_ADD) {
+
+    case SET_VALUE_TO_ADD:
       return {
         ...state,
         valueToAdd: action.payload,
       };
-    }
-  };
+
+    default:
+      return state;
+  }
+};
+
+function CounterPage({ initialCount }) {
   // const [count, setCount] = useState(initialCount);
 
   // const [valueToAdd, setValueToAdd] = useState(0);
