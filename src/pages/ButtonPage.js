@@ -17,7 +17,7 @@ function ButtonPage() {
         </Button>
       </div>
       <div>
-        <Button success outline>
+        <Button success rounded>
           See Deal
         </Button>
       </div>
@@ -28,7 +28,7 @@ function ButtonPage() {
         </Button>
       </div>
       <div>
-        <Button danger outline>
+        <Button danger rounded>
           <MdOutlineDangerous />
           Submit
         </Button>

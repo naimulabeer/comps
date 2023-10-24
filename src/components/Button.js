@@ -13,13 +13,13 @@ function Button({
 }) {
   const classes = className(
     rest.className,
-    "mb-5 ml-4 flex items-center px-3 py-1.5 border",
+    "mb-5 ml-4 flex items-center border text-base h-12 px-5 transform translate-y-5 transition-transform hover:translate-y-2 ",
     {
-      "border-blue-500 bg-blue-100": primary,
-      "border-gray-900 bg-gray-100 ": secondary,
-      "border-green-500 bg-green-100": success,
-      "border-yellow-400 bg-yellow-400": warning,
-      "border-red-500 bg-red-500": danger,
+      "border-blue-500 bg-blue-500": primary,
+      "border-gray-900 bg-gray-500": secondary,
+      "border-green-500 bg-green-500 ": success,
+      "border-yellow-500 bg-yellow-500 ": warning,
+      "border-red-500 bg-red-500 ": danger,
       "rounded-full": rounded,
       "bg-white": outline,
       "text-blue-800": outline && primary,
